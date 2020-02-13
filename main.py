@@ -6,7 +6,7 @@ import time
 def main():
     # I control all my tests here
     print("Prime calculator!")
-    test_numbers = [1000,15000]
+    test_numbers = [5000,10000]
     # The array of numbers is the maximum number I'll calculate prime numbers up to.
     # Also, I repeat this 3 times to get an average time. This is to ensure reliable results
     for number in test_numbers:
@@ -24,32 +24,41 @@ def primeSieve(begin, end):
     prime = []
     start_time = time.time()
     while (i < n):
-        if i % 2 == 0 and i != 2:    
+        isContinue = False
+        for primeNumber in prime:
+            if i % primeNumber == 0:
+                i = i + 1
+                isContinue = True
+                break
+        if isContinue: continue
+        if i in nonPrime: 
             i = i + 1
             continue
-        else:
-            for nonPrimeNumber in nonPrime:
-                if i == nonPrimeNumber:
-                    break
-            i = i + 1
-            continue
-        """ if (i in nonPrime):
-            i = i + 1
-            continue """
-        temp_i = i
-        while (temp_i < n):
+    
+        
+    
+        """ while (temp_i < n):
             nonPrimeNumber = temp_i * i
             nonPrime.append(nonPrimeNumber)
-            temp_i = temp_i + 1
+            temp_i = temp_i + 1 """
         prime.append(i)
         i = i + 1
 
     time_took = time.time() - start_time
-    for primeNumber in prime:
-        if primeNumber % 2 == 0:
-            print("This prime number is divisible by 2: {}".format(primeNumber))
     print("Length of prime numbers: {}".format(len(prime)))
     return time_took
 
 if __name__ == "__main__":
     main()
+
+
+
+
+"""     notInPrime = False
+            for nonPrimeNumber in nonPrime:
+                if i == nonPrimeNumber:
+                    notInPrime = True
+                    break
+            if notInPrime:
+                i = i + 1
+                continue """
