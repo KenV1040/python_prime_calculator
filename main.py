@@ -8,7 +8,7 @@ def main():
     print("Prime calculator!")
     #test_numbers = [500,1000,1500,2000,2500,5000,10000]
     #test_numbers = [20000,30000,40000,50000]
-    test_numbers = [100]
+    test_numbers = [100000]
     # The array of numbers is the maximum number I'll calculate prime numbers up to.
     # Also, I repeat this 3 times to get an average time. This is to ensure reliable results
     for number in test_numbers:
@@ -36,8 +36,9 @@ def primeSieve(begin, end):
         i = i + 1
 
     time_took = time.time() - start_time
-    print(prime)
+    #print(prime)
     print("Length of prime numbers: {}".format(len(prime)))
+    print("Largest prime: {}".format(prime[-1]))
     return time_took
 
 if __name__ == "__main__":
