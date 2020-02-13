@@ -31,12 +31,9 @@ def primeSieve(begin, end):
                 isContinue = True
                 break
         if isContinue: continue
-        if i in nonPrime: 
-            i = i + 1
-            continue
     
         
-    
+        temp_i = i
         """ while (temp_i < n):
             nonPrimeNumber = temp_i * i
             nonPrime.append(nonPrimeNumber)
