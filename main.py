@@ -4,8 +4,11 @@ import time
 
 
 def main():
+    # I control all my tests here
     print("Prime calculator!")
-    test_numbers = [500]
+    test_numbers = [1000,15000]
+    # The array of numbers is the maximum number I'll calculate prime numbers up to.
+    # Also, I repeat this 3 times to get an average time. This is to ensure reliable results
     for number in test_numbers:
         for i in range(3):
             time_took = primeSieve(2, number)
